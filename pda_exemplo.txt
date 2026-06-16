@@ -1,0 +1,22 @@
+# ============================================================
+#  Arquivo de configuracao do Automato de Pilha - Versao 3
+#  Linguagem: { a^n b^n | n >= 1 }
+#
+#  Para usar com outro automato, edite as secoes abaixo.
+#  Linhas com '#' sao comentarios e sao ignoradas.
+# ============================================================
+
+estados: q0 q1 q2
+alfabeto_entrada: a b
+alfabeto_pilha: Z A
+estado_inicial: q0
+simbolo_inicial_pilha: Z
+estados_finais: q2
+transicoes:
+# formato: estado_atual  entrada  topo_pilha  proximo_estado  pop  push
+# Use '0' para epsilon (nada)
+q0 a Z q0 0 A
+q0 a A q0 0 A
+q0 b A q1 A 0
+q1 b A q1 A 0
+q1 0 Z q2 0 0
